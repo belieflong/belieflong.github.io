@@ -57,18 +57,7 @@
   </entry>
   <entry>
     <title><![CDATA[Android运行时权限处理]]></title>
-    <url>%2F2017%2F05%2F06%2Fandroid-permission12%2F</url>
-    <content type="text"><![CDATA[运行时权限的处理运行时判断并让用户选择12345if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) &#123; ActivityCompat.requestPermissions(MainActivity.this, new String[]&#123;Manifest.permission.WRITE_EXTERNAL_STORAGE&#125;, 1);&#125;else &#123; openAlbum();&#125; 启动相册123456//选择照片private void openAlbum() &#123; Intent intent = new Intent("android.intent.action.GET_CONTENT"); intent.setType("image/*"); startActivityForResult(intent, CHOOSE_PHOTO);&#125; 权限请求结果1234567891011121314@Overridepublic void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) &#123; switch (requestCode)&#123; case 1: if (grantResults.length &gt; 0 &amp;&amp; grantResults[0] == PackageManager.PERMISSION_GRANTED)&#123; openAlbum(); &#125;else &#123; Toast.makeText(this, "您已拒绝权限", Toast.LENGTH_SHORT).show(); &#125; break; default: break; &#125;&#125;]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android权限</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Android运行时权限处理]]></title>
-    <url>%2F2017%2F05%2F06%2Fandroid-permission4%2F</url>
+    <url>%2F2017%2F05%2F06%2Fandroid-permission2%2F</url>
     <content type="text"><![CDATA[运行时权限的处理运行时判断并让用户选择12345if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) &#123; ActivityCompat.requestPermissions(MainActivity.this, new String[]&#123;Manifest.permission.WRITE_EXTERNAL_STORAGE&#125;, 1);&#125;else &#123; openAlbum();&#125; 启动相册123456//选择照片private void openAlbum() &#123; Intent intent = new Intent("android.intent.action.GET_CONTENT"); intent.setType("image/*"); startActivityForResult(intent, CHOOSE_PHOTO);&#125; 权限请求结果1234567891011121314@Overridepublic void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) &#123; switch (requestCode)&#123; case 1: if (grantResults.length &gt; 0 &amp;&amp; grantResults[0] == PackageManager.PERMISSION_GRANTED)&#123; openAlbum(); &#125;else &#123; Toast.makeText(this, "您已拒绝权限", Toast.LENGTH_SHORT).show(); &#125; break; default: break; &#125;&#125;]]></content>
       <categories>
         <category>Android</category>
@@ -90,7 +79,7 @@
   </entry>
   <entry>
     <title><![CDATA[Android运行时权限处理]]></title>
-    <url>%2F2017%2F05%2F06%2Fandroid-permission%2F</url>
+    <url>%2F2017%2F05%2F06%2Fandroid-permission4%2F</url>
     <content type="text"><![CDATA[运行时权限的处理运行时判断并让用户选择12345if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) &#123; ActivityCompat.requestPermissions(MainActivity.this, new String[]&#123;Manifest.permission.WRITE_EXTERNAL_STORAGE&#125;, 1);&#125;else &#123; openAlbum();&#125; 启动相册123456//选择照片private void openAlbum() &#123; Intent intent = new Intent("android.intent.action.GET_CONTENT"); intent.setType("image/*"); startActivityForResult(intent, CHOOSE_PHOTO);&#125; 权限请求结果1234567891011121314@Overridepublic void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) &#123; switch (requestCode)&#123; case 1: if (grantResults.length &gt; 0 &amp;&amp; grantResults[0] == PackageManager.PERMISSION_GRANTED)&#123; openAlbum(); &#125;else &#123; Toast.makeText(this, "您已拒绝权限", Toast.LENGTH_SHORT).show(); &#125; break; default: break; &#125;&#125;]]></content>
       <categories>
         <category>Android</category>
@@ -101,7 +90,7 @@
   </entry>
   <entry>
     <title><![CDATA[Android运行时权限处理]]></title>
-    <url>%2F2017%2F05%2F06%2Fandroid-permission6%2F</url>
+    <url>%2F2017%2F05%2F06%2Fandroid-permission%2F</url>
     <content type="text"><![CDATA[运行时权限的处理运行时判断并让用户选择12345if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) &#123; ActivityCompat.requestPermissions(MainActivity.this, new String[]&#123;Manifest.permission.WRITE_EXTERNAL_STORAGE&#125;, 1);&#125;else &#123; openAlbum();&#125; 启动相册123456//选择照片private void openAlbum() &#123; Intent intent = new Intent("android.intent.action.GET_CONTENT"); intent.setType("image/*"); startActivityForResult(intent, CHOOSE_PHOTO);&#125; 权限请求结果1234567891011121314@Overridepublic void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) &#123; switch (requestCode)&#123; case 1: if (grantResults.length &gt; 0 &amp;&amp; grantResults[0] == PackageManager.PERMISSION_GRANTED)&#123; openAlbum(); &#125;else &#123; Toast.makeText(this, "您已拒绝权限", Toast.LENGTH_SHORT).show(); &#125; break; default: break; &#125;&#125;]]></content>
       <categories>
         <category>Android</category>
@@ -124,6 +113,17 @@
   <entry>
     <title><![CDATA[Android运行时权限处理]]></title>
     <url>%2F2017%2F05%2F06%2Fandroid-permission8%2F</url>
+    <content type="text"><![CDATA[运行时权限的处理运行时判断并让用户选择12345if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) &#123; ActivityCompat.requestPermissions(MainActivity.this, new String[]&#123;Manifest.permission.WRITE_EXTERNAL_STORAGE&#125;, 1);&#125;else &#123; openAlbum();&#125; 启动相册123456//选择照片private void openAlbum() &#123; Intent intent = new Intent("android.intent.action.GET_CONTENT"); intent.setType("image/*"); startActivityForResult(intent, CHOOSE_PHOTO);&#125; 权限请求结果1234567891011121314@Overridepublic void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) &#123; switch (requestCode)&#123; case 1: if (grantResults.length &gt; 0 &amp;&amp; grantResults[0] == PackageManager.PERMISSION_GRANTED)&#123; openAlbum(); &#125;else &#123; Toast.makeText(this, "您已拒绝权限", Toast.LENGTH_SHORT).show(); &#125; break; default: break; &#125;&#125;]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android权限</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Android运行时权限处理]]></title>
+    <url>%2F2017%2F05%2F06%2Fandroid-permission6%2F</url>
     <content type="text"><![CDATA[运行时权限的处理运行时判断并让用户选择12345if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) &#123; ActivityCompat.requestPermissions(MainActivity.this, new String[]&#123;Manifest.permission.WRITE_EXTERNAL_STORAGE&#125;, 1);&#125;else &#123; openAlbum();&#125; 启动相册123456//选择照片private void openAlbum() &#123; Intent intent = new Intent("android.intent.action.GET_CONTENT"); intent.setType("image/*"); startActivityForResult(intent, CHOOSE_PHOTO);&#125; 权限请求结果1234567891011121314@Overridepublic void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) &#123; switch (requestCode)&#123; case 1: if (grantResults.length &gt; 0 &amp;&amp; grantResults[0] == PackageManager.PERMISSION_GRANTED)&#123; openAlbum(); &#125;else &#123; Toast.makeText(this, "您已拒绝权限", Toast.LENGTH_SHORT).show(); &#125; break; default: break; &#125;&#125;]]></content>
       <categories>
         <category>Android</category>
@@ -167,7 +167,7 @@
   </entry>
   <entry>
     <title><![CDATA[Android运行时权限处理]]></title>
-    <url>%2F2017%2F05%2F06%2Fandroid-permission2%2F</url>
+    <url>%2F2017%2F05%2F06%2Fandroid-permission12%2F</url>
     <content type="text"><![CDATA[运行时权限的处理运行时判断并让用户选择12345if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) &#123; ActivityCompat.requestPermissions(MainActivity.this, new String[]&#123;Manifest.permission.WRITE_EXTERNAL_STORAGE&#125;, 1);&#125;else &#123; openAlbum();&#125; 启动相册123456//选择照片private void openAlbum() &#123; Intent intent = new Intent("android.intent.action.GET_CONTENT"); intent.setType("image/*"); startActivityForResult(intent, CHOOSE_PHOTO);&#125; 权限请求结果1234567891011121314@Overridepublic void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) &#123; switch (requestCode)&#123; case 1: if (grantResults.length &gt; 0 &amp;&amp; grantResults[0] == PackageManager.PERMISSION_GRANTED)&#123; openAlbum(); &#125;else &#123; Toast.makeText(this, "您已拒绝权限", Toast.LENGTH_SHORT).show(); &#125; break; default: break; &#125;&#125;]]></content>
       <categories>
         <category>Android</category>
