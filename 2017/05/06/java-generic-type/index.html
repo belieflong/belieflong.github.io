@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="1.继承关系123class Apple&amp;#123;&amp;#125;class Banana extend Apple&amp;#123;&amp;#125;class Orange extend Apple&amp;#123;&amp;#125;">
+<meta name="description" content="继承关系123class Apple&amp;#123;&amp;#125;class Banana extend Apple&amp;#123;&amp;#125;class Orange extend Apple&amp;#123;&amp;#125; 泛型里面 A super B 表示A是B的父类或者祖先A extend B 表示A是B的子类或者子孙">
 <meta name="keywords" content="学习总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java泛型通配符之间的关系">
 <meta property="og:url" content="http://belieflong.com/2017/05/06/java-generic-type/index.html">
 <meta property="og:site_name" content="Belieflong">
-<meta property="og:description" content="1.继承关系123class Apple&amp;#123;&amp;#125;class Banana extend Apple&amp;#123;&amp;#125;class Orange extend Apple&amp;#123;&amp;#125;">
-<meta property="og:updated_time" content="2017-05-07T10:27:22.307Z">
+<meta property="og:description" content="继承关系123class Apple&amp;#123;&amp;#125;class Banana extend Apple&amp;#123;&amp;#125;class Orange extend Apple&amp;#123;&amp;#125; 泛型里面 A super B 表示A是B的父类或者祖先A extend B 表示A是B的子类或者子孙">
+<meta property="og:updated_time" content="2017-06-30T14:58:33.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java泛型通配符之间的关系">
-<meta name="twitter:description" content="1.继承关系123class Apple&amp;#123;&amp;#125;class Banana extend Apple&amp;#123;&amp;#125;class Orange extend Apple&amp;#123;&amp;#125;">
+<meta name="twitter:description" content="继承关系123class Apple&amp;#123;&amp;#125;class Banana extend Apple&amp;#123;&amp;#125;class Orange extend Apple&amp;#123;&amp;#125; 泛型里面 A super B 表示A是B的父类或者祖先A extend B 表示A是B的子类或者子孙">
 
 
 
@@ -403,19 +403,19 @@
       
 
       
-        <p>1.继承关系<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Apple</span></span>&#123;&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Banana</span> <span class="title">extend</span> <span class="title">Apple</span></span>&#123;&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Orange</span> <span class="title">extend</span> <span class="title">Apple</span></span>&#123;&#125;</div></pre></td></tr></table></figure></p>
+        <h3 id="继承关系"><a href="#继承关系" class="headerlink" title="继承关系"></a>继承关系</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Apple</span></span>&#123;&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Banana</span> <span class="title">extend</span> <span class="title">Apple</span></span>&#123;&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Orange</span> <span class="title">extend</span> <span class="title">Apple</span></span>&#123;&#125;</div></pre></td></tr></table></figure>
+<h3 id="泛型里面"><a href="#泛型里面" class="headerlink" title="泛型里面"></a>泛型里面</h3><blockquote>
+<p>A super B 表示A是B的父类或者祖先<br>A extend B 表示A是B的子类或者子孙</p>
+</blockquote>
 <a id="more"></a>
-<p>2.泛型里面</p>
-<p>A super B 表示A是B的父类或者祖先</p>
-<p>A extend B 表示A是B的子类或者子孙</p>
 <p>Java是单继承，所有继承的类构成一棵树。由于树这个结构上下是不对称的</p>
 <ul>
-<li><p>参数写成：T&lt;? super B&gt;，对于这个泛型，?代表容器里的元素类型，由于只规定了元素必须是B的超类，导致元素没有明确统一的“根”（除了Object），所以这个泛型你其实无法使用它（除了把元素强制转成Object）。所以只能插入操作，而无法读</p>
-</li>
-<li><p>参数写成： T&lt;? extends B&gt;，由于指定了所有元素的“根”是B，你任何时候都可以安全的用B来使用容器里的元素，但是由于以B</p>
-</li>
+<li>参数写成：T&lt;? super B&gt;，对于这个泛型，?代表容器里的元素类型，由于只规定了元素必须是B的超类，导致元素没有明确统一的“根”（除了Object），所以这个泛型你其实无法使用它（除了把元素强制转成Object）。所以只能插入操作，而无法读</li>
+<li>参数写成： T&lt;? extends B&gt;，由于指定了所有元素的“根”是B，你任何时候都可以安全的用B来使用容器里的元素，但是由于以B</li>
 </ul>
+<blockquote>
 <p>为祖先的子树有很多，不同子树不兼容，所以禁止做插入操作，只做读取</p>
+</blockquote>
 
       
     </div>
@@ -544,8 +544,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -582,7 +591,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -618,6 +627,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承关系"><span class="nav-number">1.</span> <span class="nav-text">继承关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型里面"><span class="nav-number">2.</span> <span class="nav-text">泛型里面</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

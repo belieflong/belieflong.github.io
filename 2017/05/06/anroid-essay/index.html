@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="防止重复启动Activity1addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)">
+<meta name="description" content="防止重复启动Activity1addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT) Gson简单使用Java对象转化Json数据12Gson gson = new Gson();gson.toJson(Object);">
 <meta name="keywords" content="学习总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android随笔总结">
 <meta property="og:url" content="http://belieflong.com/2017/05/06/anroid-essay/index.html">
 <meta property="og:site_name" content="Belieflong">
-<meta property="og:description" content="防止重复启动Activity1addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)">
-<meta property="og:updated_time" content="2017-06-29T03:26:20.399Z">
+<meta property="og:description" content="防止重复启动Activity1addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT) Gson简单使用Java对象转化Json数据12Gson gson = new Gson();gson.toJson(Object);">
+<meta property="og:updated_time" content="2017-06-30T15:00:46.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android随笔总结">
-<meta name="twitter:description" content="防止重复启动Activity1addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)">
+<meta name="twitter:description" content="防止重复启动Activity1addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT) Gson简单使用Java对象转化Json数据12Gson gson = new Gson();gson.toJson(Object);">
 
 
 
@@ -404,12 +404,9 @@
 
       
         <p><strong>防止重复启动Activity</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)</div></pre></td></tr></table></figure></p>
+<p><strong>Gson简单使用</strong><br>Java对象转化Json数据<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Gson gson = <span class="keyword">new</span> Gson();</div><div class="line">gson.toJson(Object);</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<p><strong>Gson简单使用</strong></p>
-<p>Java对象转化Json数据<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Gson gson = <span class="keyword">new</span> Gson();</div><div class="line">gson.toJson(Object);</div></pre></td></tr></table></figure></p>
-<p>Json数据转化Java对象</p>
-<p>网络访问成功返回数据的方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResponse</span><span class="params">(String response)</span> </span>&#123;  </div><div class="line">    <span class="comment">//成功获取网络json数据  </span></div><div class="line">     Child2 child2 = gson.fromJson(response, Child2.class);</div><div class="line">&#125;  </div><div class="line">List&lt;Child2&gt; child2List = gson.fromJson(response, <span class="keyword">new</span> TypeToken&lt;List&lt;Child2&gt;&gt;()&#123;&#125;.getType());</div></pre></td></tr></table></figure>
+<p>Json数据转化Java对象<br>网络访问成功返回数据的方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResponse</span><span class="params">(String response)</span> </span>&#123;  </div><div class="line">    <span class="comment">//成功获取网络json数据  </span></div><div class="line">     Child2 child2 = gson.fromJson(response, Child2.class);</div><div class="line">&#125;  </div><div class="line">List&lt;Child2&gt; child2List = gson.fromJson(response, <span class="keyword">new</span> TypeToken&lt;List&lt;Child2&gt;&gt;()&#123;&#125;.getType());</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>未完待更新</p>
 </blockquote>
@@ -486,8 +483,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/06/learn-ubuntu-devlop/" rel="prev" title="windows转ubuntu开发(一)">
-                windows转ubuntu开发(一) <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/06/learn-ubuntu-devlop/" rel="prev" title="Windows转Ubuntu开发(一)">
+                Windows转Ubuntu开发(一) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -579,7 +576,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
