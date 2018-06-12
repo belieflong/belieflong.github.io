@@ -1,5 +1,5 @@
 ---
-title: Windows转Ubuntu开发(一)
+title: Windows转Ubuntu开发
 date: 2017-05-06 17:23:25
 categories:
 	- Android

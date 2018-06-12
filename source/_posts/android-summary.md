@@ -1,5 +1,5 @@
 ---
-title: Android学习总结(一)
+title: Android系统之-简单使用Activity
 date: 2017-05-06 17:22:13
 categories:
 	- Android
@@ -22,8 +22,8 @@ tags:
 ### 应用层
 > 所有安装在手机的应用程序都时属于这一层的。
  
-## Android四大组件
-### 使用Activity
+## 使用Activity
+### 如何启动Activity
 > 四大组件之一，主要用于和用户交互。
 
 **activity->布局->AndroidManifest注册**
@@ -42,6 +42,10 @@ tags:
 Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
 ....
 startActivityin(intent);
+```
+**防止重复启动Activity**
+``` java
+addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
 ```
 
 #### 隐式Intent
@@ -152,3 +156,42 @@ B:onPause -> A:onRestart -> A:onStart -> A:onResume -> B:onStop -> B:onDestroy�
 ### Activity被回收
 
 {%  img /images/android/activity_onSave.png %}
+
+## 运行时权限处理
+### 运行时判断并让用户选择
+``` java
+if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+	ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+}else {
+	openAlbum();
+}
+```
+### 启动相册
+``` java
+//选择照片
+private void openAlbum() {
+	Intent intent = new Intent("android.intent.action.GET_CONTENT");
+	intent.setType("image/*");
+	startActivityForResult(intent, CHOOSE_PHOTO);
+}
+```
+<!-- more -->
+
+### 权限请求结果
+
+``` java
+@Override
+public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+	switch (requestCode){
+		case 1:
+			if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+				openAlbum();
+		}else {
+			Toast.makeText(this, "您已拒绝权限", Toast.LENGTH_SHORT).show();
+		}
+			break;
+		default:
+			break;
+	}
+}
+```
