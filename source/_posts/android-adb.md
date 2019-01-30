@@ -27,7 +27,7 @@ am start -n 包名/.LauncherActicity //清单文件中配置的
 adb install xxx.apk
 adb uninstall 包名
 adb shell pm uninstall -k 包名 保留用户数据
-````
+```
 ### 通过IP地址连接设备
 ``` shell
 adb connect ip地址 
