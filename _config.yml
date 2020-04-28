@@ -82,7 +82,8 @@ search:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 ## git@github.com:belieflong/belieflong.github.io.git
+## https://github.com/belieflong/belieflong.github.io.git
 deploy:
   type: git
-  repo: https://github.com/belieflong/belieflong.github.io.git
+  repo: git@github.com:belieflong/belieflong.github.io.git
   branch: master
