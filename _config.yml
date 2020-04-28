@@ -14,7 +14,7 @@ timezone:
 
 # URL 网址
 ## 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，则请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/
-url: http://belieflong.com
+url: http://blog.belieflong.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -81,7 +81,8 @@ search:
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
+## git@github.com:belieflong/belieflong.github.io.git
 deploy:
   type: git
-  repo: git@github.com:belieflong/belieflong.github.io.git
+  repo: https://github.com/belieflong/belieflong.github.io.git
   branch: master
