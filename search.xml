@@ -12,6 +12,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Ubuntu下断点调试webrtc android native层源码]]></title>
+    <url>%2F2019%2F11%2F03%2Fwebrtc-android-native-debug%2F</url>
+    <content type="text"><![CDATA[环境搭建ubuntu需要将webrtc android源码整体编译完成后进行1、拷贝webrtc/src/third_party下的Android SDK和NDK文件夹到某个目录2、配置环境变量123export ANDROID_HOME=~/android/android_sdkexport ANDROID_NDK_HOME=~/android/android_sdk/ndk-bundleexport PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK_HOME 3、安装Android Studio（记得安装64位环境下的依赖库）下载官方的as安装包，以及安装依赖，并启动1sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 1cd android-studio/bin &amp;&amp; ./studio.sh 3、安装SDK相关工具Build Tools、Cmake、LLDB （可通过as的sdk管理界面安装）4、安装golang-go（编译报错 : go: not found）1sudo apt install golang-go 编译webrtc as工程代码1、下载webrtc android_gradle工程，将android_gradle工程放到源码/src/sdk目录下1https://github.com/HackWebRTC/webrtc/tree/hack_webrtc/sdk/android_gradle 2、修改gradle.properties中的相关路径问题。如：webrtc_repo、python、compile_native_code=true、protoc (/src/out/Debug/clang_x64/protoc) ，使用Android Studio打开 修改apprtc配置文件中版本号1、注释掉源码中src/examples/androidapp/AndroidManifest.xml中的版本号 执行sync碰到的报错问题as中执行sync时，生成相关文件路径为：/src/out/android_studio/gen根据实际报错内容进行解决，比如M77分支碰到的问题：1、找不到头文件：根据报错内容在源码中找到RefCounted.java文件，定位到void release() 方法，添加@CalledByNative2、注释掉webrtc.build中”–input_file sdk/android/api/org/webrtc/CandidatePairChangeEvent.java “文件等，input_file文件在源码中已经不存在了，所以要根据实际情况修改否则会报错。3、删除out/android_studio/gen重新sync；sync期间出现一个文件生成有问题，则接下来的文件也将无法生成 build期间报错问题出现该问题一般都是文件不存在或者路径问题，需要根据当前源代码1、检查/src/sdk/android_gradle/webrtc/third_party下报错模块的CMakeLists.txt里相关文件的路径是否正确2、例如：编译时报 src/sdk/android_gradle/webrtc/third_party/protobuf中找不到generated_enum_util.cc文件，则需要根据源码中 src/third_party对应模块中的xxx.gni文件所包含的源文件路径，对android_gradle工程下对应的CMakeLists.txt进行修改3、例如：M77分支修改了as工程中 libvpx、protobuf模块下的CMakeLists.txt 成功跑起来后就可以断点调试了]]></content>
+      <categories>
+        <category>WebRTC</category>
+      </categories>
+      <tags>
+        <tag>webrtc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[adb工具常用的命令]]></title>
     <url>%2F2018%2F12%2F04%2Fandroid-adb%2F</url>
     <content type="text"><![CDATA[启动和停止服务12adb start-serveradb kill-server 查看APK包名12aapt dump badging &lt;file_path.apk&gt; aapt工具在 android-sdk\build-tools对应的目录下 启动1am start -n 包名/.LauncherActicity //清单文件中配置的 安装以及卸载123adb install xxx.apkadb uninstall 包名adb shell pm uninstall -k 包名 保留用户数据 通过IP地址连接设备1adb connect ip地址 关闭连接12345adb disconnect``` ### 查看已经连接的设备``` shelladb devices 进入shell模式12adb shelladb -s 10.1.3.150 shell 指定具体设备 查看应用版本1adb shell dumpsys package com.examle.xx 输出安装包的APK路径1adb shell pm path &lt;PACKAGE&gt; 删除与包相关的所有数据：清除数据和缓存1adb shell pm clear &lt;PACKAGE&gt; 获取系统版本1adb shell getprop ro.build.version.release 获取系统api版本1adb shell getprop ro.build.version.sdk 获取相关制造商信息1adb shell getprop | grep "model\|version.sdk\|manufacturer\|hardware\|platform\|revision\|serialno\|product.name\|brand" 获取设备名称1cat /system/build.prop 推送文件到系统1adb push d:/key.xml /sdcard 拉取文件到当前目录1adb pull /sdcard . 查看内存1adb shell procrank 使文件系统可读写12345678adb shell mount -o remount,rw /systemadb remount或adb shell# mount 查看挂载找到挂载的名称/emmc@android /system ext4 rw,seclabel,relatime,noauto_da_alloc,commit=1,data=ordered 0 0# mount -o rw,remount -t ext4 /emmc@android system/ 写日志12345adb logcat -s TAG &gt; xx.log //指定TAG相关的日志写入文件adb logcat | grep PID &gt; xx.log //根据PID将日志写入文件adb logcat -c //清空日志adb logcat &gt; xx.log //开始文件通过Ctrl C 关掉即停止adb logcat -d &gt; xx.log //将缓存的日志输出到文件 帮助1adb logcat --help]]></content>

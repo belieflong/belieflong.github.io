@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="webrtc,">
 
 
 
@@ -90,16 +90,20 @@
 
 
 
-<meta name="description" content="Belieflong的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Belieflong">
-<meta property="og:url" content="http://blog.belieflong.com/tags/SSH/index.html">
+<meta name="description" content="环境搭建ubuntu需要将webrtc android源码整体编译完成后进行1、拷贝webrtc/src/third_party下的Android SDK和NDK文件夹到某个目录2、配置环境变量123export ANDROID_HOME=~/android/android_sdkexport ANDROID_NDK_HOME=~/android/android_sdk/ndk-bundleexp">
+<meta name="keywords" content="webrtc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu下断点调试webrtc android native层源码">
+<meta property="og:url" content="http://blog.belieflong.com/2019/11/03/webrtc-android-native-debug/index.html">
 <meta property="og:site_name" content="Belieflong">
-<meta property="og:description" content="Belieflong的个人博客">
+<meta property="og:description" content="环境搭建ubuntu需要将webrtc android源码整体编译完成后进行1、拷贝webrtc/src/third_party下的Android SDK和NDK文件夹到某个目录2、配置环境变量123export ANDROID_HOME=~/android/android_sdkexport ANDROID_NDK_HOME=~/android/android_sdk/ndk-bundleexp">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://blog.belieflong.com/images/webrtc/webrtc-debug-screenshot.png">
+<meta property="og:updated_time" content="2020-05-07T16:35:57.410Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Belieflong">
-<meta name="twitter:description" content="Belieflong的个人博客">
+<meta name="twitter:title" content="Ubuntu下断点调试webrtc android native层源码">
+<meta name="twitter:description" content="环境搭建ubuntu需要将webrtc android源码整体编译完成后进行1、拷贝webrtc/src/third_party下的Android SDK和NDK文件夹到某个目录2、配置环境变量123export ANDROID_HOME=~/android/android_sdkexport ANDROID_NDK_HOME=~/android/android_sdk/ndk-bundleexp">
+<meta name="twitter:image" content="http://blog.belieflong.com/images/webrtc/webrtc-debug-screenshot.png">
 
 
 
@@ -127,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.belieflong.com/tags/SSH/">
+  <link rel="canonical" href="http://blog.belieflong.com/2019/11/03/webrtc-android-native-debug/">
 
 
 
 
 
-  <title>标签: SSH | Belieflong</title>
+  <title>Ubuntu下断点调试webrtc android native层源码 | Belieflong</title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -168,7 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -304,42 +308,210 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>SSH<small>标签</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.belieflong.com/2019/11/03/webrtc-android-native-debug/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Belieflong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Belieflong">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Ubuntu下断点调试webrtc android native层源码</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-03T12:06:10+08:00">
+                2019-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/WebRTC/" itemprop="url" rel="index">
+                    <span itemprop="name">WebRTC</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h3 id="环境搭建ubuntu"><a href="#环境搭建ubuntu" class="headerlink" title="环境搭建ubuntu"></a>环境搭建ubuntu</h3><p>需要将webrtc android源码整体编译完成后进行<br>1、拷贝webrtc/src/third_party下的Android SDK和NDK文件夹到某个目录<br>2、配置环境变量<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> ANDROID_HOME=~/android/android_sdk</span><br><span class="line"><span class="built_in">export</span> ANDROID_NDK_HOME=~/android/android_sdk/ndk-bundle</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$ANDROID_HOME</span>/tools:<span class="variable">$ANDROID_HOME</span>/platform-tools:<span class="variable">$ANDROID_NDK_HOME</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>3、安装Android Studio（记得安装64位环境下的依赖库）<br>下载官方的as安装包，以及安装依赖，并启动<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> android-studio/bin &amp;&amp; ./studio.sh</span><br></pre></td></tr></table></figure>
+<p>3、安装SDK相关工具<br>Build Tools、Cmake、LLDB （可通过as的sdk管理界面安装）<br>4、安装golang-go（编译报错 : go: not found）<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install golang-go</span><br></pre></td></tr></table></figure></p>
+<h3 id="编译webrtc-as工程代码"><a href="#编译webrtc-as工程代码" class="headerlink" title="编译webrtc as工程代码"></a>编译webrtc as工程代码</h3><p>1、下载webrtc android_gradle工程，将android_gradle工程放到源码/src/sdk目录下<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/HackWebRTC/webrtc/tree/hack_webrtc/sdk/android_gradle</span><br></pre></td></tr></table></figure></p>
+<p>2、修改gradle.properties中的相关路径问题。如：webrtc_repo、python、compile_native_code=true、protoc (/src/out/Debug/clang_x64/protoc) ，使用Android Studio打开</p>
+<h4 id="修改apprtc配置文件中版本号"><a href="#修改apprtc配置文件中版本号" class="headerlink" title="修改apprtc配置文件中版本号"></a>修改apprtc配置文件中版本号</h4><p>1、注释掉源码中src/examples/androidapp/AndroidManifest.xml中的版本号</p>
+<h4 id="执行sync碰到的报错问题"><a href="#执行sync碰到的报错问题" class="headerlink" title="执行sync碰到的报错问题"></a>执行sync碰到的报错问题</h4><p>as中执行sync时，生成相关文件路径为：/src/out/android_studio/gen<br>根据实际报错内容进行解决，比如M77分支碰到的问题：<br>1、找不到头文件：根据报错内容在源码中找到RefCounted.java文件，定位到void release() 方法，添加@CalledByNative<br>2、注释掉webrtc.build中”–input_file sdk/android/api/org/webrtc/CandidatePairChangeEvent.java “文件等，input_file文件在源码中已经不存在了，所以要根据实际情况修改否则会报错。<br>3、删除out/android_studio/gen重新sync；sync期间出现一个文件生成有问题，则接下来的文件也将无法生成</p>
+<h4 id="build期间报错问题"><a href="#build期间报错问题" class="headerlink" title="build期间报错问题"></a>build期间报错问题</h4><p>出现该问题一般都是文件不存在或者路径问题，需要根据当前源代码<br>1、检查/src/sdk/android_gradle/webrtc/third_party下报错模块的CMakeLists.txt里相关文件的路径是否正确<br>2、例如：编译时报 src/sdk/android_gradle/webrtc/third_party/protobuf中找不到generated_enum_util.cc文件，则需要根据源码中 src/third_party对应模块中的xxx.gni文件所包含的源文件路径，对android_gradle工程下对应的CMakeLists.txt进行修改<br>3、例如：M77分支修改了as工程中 libvpx、protobuf模块下的CMakeLists.txt</p>
+<h3 id="成功跑起来后就可以断点调试了"><a href="#成功跑起来后就可以断点调试了" class="headerlink" title="成功跑起来后就可以断点调试了"></a>成功跑起来后就可以断点调试了</h3><img src="/images/webrtc/webrtc-debug-screenshot.png">
+      
+    </div>
 
-      <h2 class="post-title">
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/05/06/spring-intro/" itemprop="url">
-              
-                <span itemprop="name">Spring框架之-入门简介</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechatpay.png" alt="Belieflong WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.png" alt="Belieflong Alipay">
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-05-06T17:23:41+08:00" content="2017-05-06">
-          05-06
-        </time>
-      </div>
 
-    </header>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/webrtc/" rel="tag"># webrtc</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/04/android-adb/" rel="next" title="adb工具常用的命令">
+                <i class="fa fa-chevron-left"></i> adb工具常用的命令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/05/owt-server-setup/" rel="prev" title="OWT Server 环境搭建">
+                OWT Server 环境搭建 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -347,6 +519,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -366,8 +542,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="Belieflong">
           <p class="site-author-name" itemprop="name">Belieflong</p>
@@ -438,6 +623,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境搭建ubuntu"><span class="nav-number">1.</span> <span class="nav-text">环境搭建ubuntu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译webrtc-as工程代码"><span class="nav-number">2.</span> <span class="nav-text">编译webrtc as工程代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改apprtc配置文件中版本号"><span class="nav-number">2.1.</span> <span class="nav-text">修改apprtc配置文件中版本号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行sync碰到的报错问题"><span class="nav-number">2.2.</span> <span class="nav-text">执行sync碰到的报错问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#build期间报错问题"><span class="nav-number">2.3.</span> <span class="nav-text">build期间报错问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#成功跑起来后就可以断点调试了"><span class="nav-number">3.</span> <span class="nav-text">成功跑起来后就可以断点调试了</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -549,6 +750,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 
