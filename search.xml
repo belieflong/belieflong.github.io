@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[编译webrtc windows源码]]></title>
+    <url>%2F2020%2F10%2F18%2Fwebrtc-windows-build%2F</url>
+    <content type="text"><![CDATA[搭建webrtc windows编译环境安装depot_tools下载后将其解压到某个目录https://storage.googleapis.com/chrome-infra/depot_tools.zip 配置环境变量新建DEPOT_TOOLS_WIN_TOOLCHAIN 设置为0Path中添加depot_tools路径配置好以后执行一次 gclient （为了安装相关依赖工具） 下载源代码12fetch --nohooks webrtcgclient sync 编译提前安装好vs2017目前好像只能在线安装 默认勾线安装windows sdk记得安装Debugging Tools for Windows，可通过控制面板-程序 右击 Windows Software Development Kit 选择修改 勾选安装注意最新的webrtc源码依赖于最新的windows sdk，参照下边的链接安装最新的sdk 编译命令12gn gen --ide=vs out/Default --args="is_debug=false"ninja -C out/Default 编译成功123ninja -C out/Defaultninja: Entering directory `out/Default'[5224/5224] STAMP obj/default.stamp 报windows sdk版本的问题时下载最新的sdk安装1https://developer.microsoft.com/zh-cn/windows/downloads/windows-10-sdk/]]></content>
+      <categories>
+        <category>WebRTC</category>
+      </categories>
+      <tags>
+        <tag>webrtc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[OWT Server 环境搭建]]></title>
     <url>%2F2020%2F04%2F05%2Fowt-server-setup%2F</url>
     <content type="text"><![CDATA[下载源码下载指定的版本12wget https://github.com/open-webrtc-toolkit/owt-server/archive/v4.3.zip -O owt-server-4.3.zipunzip owt-server-4.3.zip 官方的仓库1git clone https://github.com/open-webrtc-toolkit/owt-server.git 安装依赖1cd owt-server &amp;&amp; ./scripts/installDepsUnattended.sh 编译native模块1./script/pack.js –t mcu –check 注意：GitHub上-t的参数是all，但如果服务器不支持硬件加速，会出错，所以在此我们使用mcu参数此命令会下载相关的依赖并编译 下载及编译app1git cline https://github.com/open-webrtc-toolkit/owt-client-javascript.git npm install grunt-cli -g 此步骤可以省略，安装依赖时已经安装上了若提示node不存在时，可以使用如下方式：nvm -v、nvm ls、nvm use node版本号1cd owt-client-javascript/scripts &amp;&amp; npm install &amp;&amp; grunt 如果想要生成debug的demo，则把grunt换成grunt debug，此时在dist目录下会生成sdk-debug目的。 打包1./scripts/pack.js -t all -f -a -s ~/owt-client-javascript-4.3/dist/samples/conference 运行的时候需要owt-client-javascript这个demo 配置 owt-server (在dist目录下)1、打开webrtc_agent/agent.toml目录，设置你服务器的公网IP，修改 [webrtc] 部分的 network_interfaces添加{name = “enp0s3”, replaced_ip_address = “本地ip地址”}2、编辑 portal/portal.toml：修改 [portal] 部分里的 ip_address 为服务器公网 IP 地址修改 ip_address = “本地ip地址” 初始化1cd owt-server/dist/ &amp;&amp; ./bin/init-all.sh 注意，此时会生成superID及superKey，后面登录console的时候需要使用到，并询问你是否初始化rabbitMQ及mongoDB，输入NO即可。如果点了YES，在后面启动模块的时候会报错（删除当前dist目录，再执行一次打包的步骤） 启动所有模块服务：12./bin/start-all.sh./bin/stop-all.sh 启动测试页面12https://localhost:3004https://localhost:3004/forward=true 验证后台服务console可以用来创建service及创建房间，输入(使用superId及superKey登录) https://localhost:3300/console 注意事项(1).下载时网络需要代理(2).执行init脚本时，选择No；登陆后台时，使用init生成的key登录(3).可以手动指定node（nvm use node版本号）或配置环境变量(4).修改server源码中的installCommonDeps.sh脚本，否则出现openssl-1.0.2下载失败的问题12将http://www.openssl.org/source/openssl-$&#123;SSL_VERSION&#125;.tar.gz修改为http://www.openssl.org/source/old/1.0.2/openssl-$&#123;SSL_VERSION&#125;.tar.gz可正常下载]]></content>
